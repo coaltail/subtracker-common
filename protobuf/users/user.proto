@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/coaltail/subtracker-common/protobuf/users";
+
+
+service UserService {
+  rpc GetUserByID(GetUserByIDRequest) returns (UserResponse);
+}
+
+message GetUserByIDRequest {
+  string id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string username = 4;
+  string email = 5;
+  string phone = 6;
+}
